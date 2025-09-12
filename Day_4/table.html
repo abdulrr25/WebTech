@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+
+    <form  >
+        Number: <input type="text" name="Name" id="form1"/>
+
+        <input type="button" value="Check Table" id="btn" onclick="showvalue()">
+    </form>
+    <div id="d1" >
+
+    </div>
+
+    <script>
+        function showvalue(){
+            let nm = document.getElementById("form1").value;
+            let output = "<table border=1>"
+            for (var i=1;i<=10;i++){
+                let str = `<tr> <td> ${nm} *  ${i} = ${nm*i} </td></tr>`
+             output = output.concat(str)
+            }
+            output=output.concat("</table>")
+            document.getElementById("d1").innerHTML=output
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formvalidation</title>
+</head>
+<body>
+    <h1>Array Manipulation</h1>
+    <p>Enter a number and use the buttons to modify the array.</p>
+
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    
+    <button type="button" onclick="Addtoend()">Add at End</button>
+    <button type="button" onclick="Addtostart()">Add at Start</button>
+    <button type="button" onclick="Deletefromend()">Delete from End</button>
+    <button type="button" onclick="Deletefromstart()">Delete from Start</button>
+    <button type="button" onclick="Displayoddnum()">Display Odd Numbers</button>
+    <button type="button" onclick="Displayevennum()">Display Even Numbers</button>
+
+    <h2>Current Array:</h2>
+    <div id="arrayDisplay"></div>
+
+    <h2>Result:</h2>
+    <div id="resultDisplay"></div>
+
+    <script>
+        let arr = [34, 23, 12, 54, 57, 3, 57, 87];
+
+        function updateDisplay() {
+            const arrayDisplay = document.getElementById('arrayDisplay');
+            arrayDisplay.textContent = arr.length > 0 ? arr.join(', ') : 'Array is empty.';
+            document.getElementById('resultDisplay').textContent = '';
+        }
+
+        function getNumberInput() {
+            const inputElement = document.getElementById('numberInput');
+            const value = parseFloat(inputElement.value);
+            inputElement.value = ''; 
+            if (isNaN(value)) {
+                return null;
+            }
+            return value;
+        }
+
+        function Addtoend(){
+            const num = getNumberInput();
+            if (num !== null) {
+                arr.push(num);
+                updateDisplay();
+            } else {
+                showMessage('Please enter a valid number.');
+            }
+        }
+
+        function Addtostart(){
+            const num = getNumberInput();
+            if (num !== null) {
+                arr.unshift(num); 
+                updateDisplay();
+            } else {
+                showMessage('Please enter a valid number.');
+            }
+        }
+
+        function Deletefromend(){
+            if (arr.length > 0) {
+                arr.pop(); 
+                updateDisplay();
+            } else {
+                showMessage('Array is already empty.');
+            }
+        }
+
+        function Deletefromstart(){
+            if (arr.length > 0) {
+                arr.shift(); 
+                updateDisplay();
+            } else {
+                showMessage('Array is already empty.');
+            }
+        }
+
+        function Displayoddnum(){
+            const resultDisplay = document.getElementById('resultDisplay');
+            if (arr.length > 0) {
+                const oddNumbers = arr.filter(num => num % 2 !== 0); 
+                resultDisplay.textContent = 'Odd Numbers: ' + (oddNumbers.length > 0 ? oddNumbers.join(', ') : 'None found.');
+            } else {
+                resultDisplay.textContent = 'Array is empty.';
+            }
+        }
+
+        function Displayevennum(){
+            const resultDisplay = document.getElementById('resultDisplay');
+            if (arr.length > 0) {
+                const evenNumbers = arr.filter(num => num % 2 === 0); 
+                resultDisplay.textContent = 'Even Numbers: ' + (evenNumbers.length > 0 ? evenNumbers.join(', ') : 'None found.');
+            } else {
+                resultDisplay.textContent = 'Array is empty.';
+            }
+        }
+
+        function showMessage(message) {
+            const messageElement = document.getElementById('resultDisplay');
+            messageElement.textContent = 'Message: ' + message;
+        }
+
+        updateDisplay();
+    </script>
+</body>
+</html>

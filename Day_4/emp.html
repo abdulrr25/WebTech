@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+</head>
+<body>
+    <div>
+        Enter The Details of the Employee  Below :
+        <br>
+    </div>
+    <div>
+
+    <label for="firstname"> Enter your first name</label>
+    <input type="text" id="firname" placeholder="Enter your first name"><br><br>
+     <label for="lastname"> Enter your last name</label>
+    <input type="text" id="lasname" placeholder="Enter your last name"><br><br>
+     <label for="Email"> Enter your email</label>
+    <input type="email" id="email" placeholder="Enter your email"><br><br>
+     <label for="firstname"> Enter your date of birth</label>
+    <input type="date" id="dob" ><br><br>
+    <input type="button" type="submit" value="Submit" onclick="validate()">
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div id="d1" >
+
+    </div>
+    <script>
+        function validate() {
+    var fn = document.getElementById("firname").value;
+    var ls = document.getElementById("lasname").value;
+    var em = document.getElementById("email").value;
+    var db = document.getElementById("dob").value;
+
+    if (fn === "" || ls === "" || em === "" || db === "") {
+        alert("Please Enter all the details ");
+         
+    }
+    else{
+        var output="<table border=2>" ;
+             let str = `<tr><td> ${fn} ${ls} ${em} ${db} </tr></td>`
+
+            output = output.concat(str);
+            document.getElementById("d1").innerHTML=output
+    }
+
+    
+}
+    </script>
+</body>
+</html>
