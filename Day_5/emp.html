@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <style>
+        h1,
+        #detail {
+            text-align: center;
+        }
+
+        #formContainer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        input,
+        textarea {
+            width: 300px;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Enter The Details of the Employee Below:
+    </h1>
+    <div id="detail">
+        <label for="firname">Enter your first name</label>
+        <input type="text" id="firname" placeholder="Enter your first name"><br><br>
+        <label for="lasname">Enter your last name</label>
+        <input type="text" id="lasname" placeholder="Enter your last name"><br><br>
+        <label for="email">Enter your email</label>
+        <input type="email" id="email" placeholder="Enter your email"><br><br>
+        <label for="dob">Enter your date of birth</label>
+        <input type="date" id="dob"><br><br>
+        <input type="button" value="Submit" onclick="validate()">
+
+    </div>
+    <br><br><br>
+    <table id="d1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Actions Buttons</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        function validate() {
+            var fn = document.getElementById("firname").value;
+            var ls = document.getElementById("lasname").value;
+            var em = document.getElementById("email").value;
+            var db = document.getElementById("dob").value;
+
+            if (fn === "" || ls === "" || em === "" || db === "") {
+                alert("Please Enter all the details.");
+                return;
+            }
+
+            let tableBody = document.getElementById("d1").getElementsByTagName('tbody')[0];
+            let newRow = tableBody.insertRow();
+
+            newRow.insertCell(0).textContent = fn;
+            newRow.insertCell(1).textContent = ls;
+            newRow.insertCell(2).textContent = em;
+            newRow.insertCell(3).textContent = db;
+
+            let actionsCell = newRow.insertCell(4);
+            actionsCell.innerHTML = `<button onclick="editEntry(this)">Edit</button> <button onclick="deleteEntry(this)">Delete</button>`;
+
+            clearForm();
+        }
+
+        function clearForm() {
+            document.getElementById("firname").value = "";
+            document.getElementById("lasname").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("dob").value = "";
+        }
+
+        function editEntry(button) {
+            let row = button.parentNode.parentNode;
+
+            let fnamecell = row.cells[0];
+            let lnamecell = row.cells[1];
+            let emlcell = row.cells[2];
+            let dobcell = row.cells[3];
+
+            let fnminpt = prompt("Enter the updated First Name", fnamecell.innerHTML);
+            let lnminpt = prompt("Enter the updated Last Name", lnamecell.innerHTML);
+            let eminpt = prompt("Enter the updated Email", emlcell.innerHTML);
+            let dbinpt = prompt("Enter the updated Date Of Birth", dobcell.innerHTML);
+
+
+
+            fnamecell.innerHTML = fnminpt;
+            lnamecell.innerHTML = lnminpt;
+            emlcell.innerHTML = eminpt;
+            dobcell.innerHTML = dbinpt;
+
+        }
+
+        function deleteEntry(button) {
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+
+</html>

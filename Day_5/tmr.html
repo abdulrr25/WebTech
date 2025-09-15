@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+        <h1>Current Time</h1>
+        <h2>tODAY TIME IS </h2>
+        <h2 id="tm"></h2>
+    </body>
+    <script>
+    setInterval(mytime,1000);
+    function mytime(){
+        d=new Date();
+        document.getElementById("tm").innerHTML=
+
+        d.getFullYear()+"  "+
+        d.getMonth()+"  "+
+        d.getDate()+"\n"+
+        d.getHours()+" : " +
+        d.getMinutes()+" : " +
+        d.getSeconds() ;
+
+
+
+    }
+</script>
+</html>
