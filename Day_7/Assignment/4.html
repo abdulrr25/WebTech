@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#di").animate({left:'300px', height:'300px', opacity:1},1000);
+
+            });
+            
+            $("#btn3").click(function(){
+                $("#di").animate({left:'0px', height:'115px', opacity:1},1000);
+
+            });
+
+            $("#btn2").click(function(){
+                $("#di").stop()
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="di" style="background-color: rgb(55, 134, 85); height: 115px; width: 100px; position: absolute;">Life is Full Of Ups and Downs . Just believe on yourself and work calmly</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button id="btn1">Left to right</button>
+    <button id="btn2">Stop</button>
+    <button id="btn3">Right To Left</button>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- <html>
+
+<head>
+    <title>Sort</title>
+</head>
+
+<body>
+
+    Here is the sorting function
+    <p id="sort"> </p>
+</body>
+<script>
+    let a = [12, 13, 23, 1, 2, 56, 23]
+    a.sort((n1,n2)=>{
+        return (n1-n2)
+    })
+    document.getElementById("sort").innerHTML=a;
+    
+
+</script>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort</title>
+</head>
+<body>
+    <label for="numbers">Enter numbers (comma-separated):</label>
+    <input type="text" id="numbersInput">
+    <button onclick="sortNumbers()">Sort</button>
+
+    <h3>Here is the sorted array:</h3>
+    <p id="sort"></p>
+
+    <script>
+        function sortNumbers() {
+            const inputString = document.getElementById("numbersInput").value;
+            const a = inputString.split(',').map(Number);
+                        a.sort((n1, n2) => {
+                return n1 - n2;
+            });
+                        document.getElementById("sort").innerHTML = a;
+        }
+    </script>
+</body>
+</html>

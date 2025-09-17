@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <label>Enter your first name</label>
+    <input type="text" name="fname" id="fname"><br><br>
+    <label>Enter your last name</label>
+    <input type="text" name="lname" id="lname"><br><br>
+    <label>Enter your Age</label>
+    <input type="number" name="age" id="age"><br><br>
+    <input type="button" value="Submit" id="btn" onclick="submit()">
+
+    <div id="jsonOutput"></div>
+    <div id="tableContainer"></div>
+
+    <script>
+        function submit() {
+            const myData = {
+                firstName: document.getElementById('fname').value,
+                lastName: document.getElementById('lname').value,
+                age: document.getElementById('age').value
+            };
+
+            const myjson = JSON.stringify(myData);
+            console.log("JSON String:", myjson);
+
+            document.getElementById('jsonOutput').innerText = "JSON Data: " + myjson;
+
+            createTableFromJSON(myData);
+        }
+
+        function createTableFromJSON(data) {
+            const container = document.getElementById('tableContainer');
+            container.innerHTML = '';
+
+            
+
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            const headerRow = document.createElement('tr');
+            for (const key in data) {
+                const th = document.createElement('th');
+                th.textContent = key.toUpperCase();
+                headerRow.appendChild(th);
+            }
+            thead.appendChild(headerRow);
+
+            const dataRow = document.createElement('tr');
+            for (const key in data) {
+                const td = document.createElement('td');
+                td.textContent = data[key];
+                dataRow.appendChild(td);
+            }
+            tbody.appendChild(dataRow);
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+
+            container.appendChild(table);
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+</body>
+
+</html>
