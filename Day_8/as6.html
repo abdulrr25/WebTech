@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p:first").toggleClass("intro");
+            }
+        
+        );
+        });
+    </script>
+    <style>
+        .intro {
+            font-size: 150%;
+            font-weight: 600;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>This is a heading</h1>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Check Toggle</button>
+
+</body>
+
+</html>

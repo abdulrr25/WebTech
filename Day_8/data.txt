@@ -1,0 +1,5 @@
+Data From Text File 
+Hello EEveryone
+Welcome to the world of AJAX
+
+100 records   

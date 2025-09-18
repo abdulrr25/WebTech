@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Assignment 1</title>
+</head>
+<body>
+    Below is the Displayed Data from the file
+    <button type="button" onclick="showdata()">Details</button>
+    <p id="data"></p>
+</body>
+<script>
+    function showdata(){
+        let req= new XMLHttpRequest();
+        req.open("GET","data.txt");
+        req.send();
+        req.onload = function(){
+            let dataJSON = this.responseText;
+            document.getElementById("data").innerHTML=dataJSON
+        }
+    }
+</script>
+</html>

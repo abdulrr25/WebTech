@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inbuilt Functions</title>
+</head>
+<body>
+    <div>
+        <p>
+
+            Enter User Name<input type="text" id ="usrnm" required>
+        </p>
+        <p>
+            Enter Password <input type="password" minlength="6" maxlength="12" id="pass">
+
+
+        </p>
+        <p>
+            <button type="submit" onclick="valid()">Submit</button>
+        </p>
+        <p id="p1">
+
+        </p>
+        <p id="p2">
+
+        </p>
+    </div>
+</body>
+<script>
+    function valid(){
+        let ele = document.getElementById("usrnm");
+        console.log(ele.checkValidity());
+
+        let ele1 = document.getElementById("pass")
+        console.log(ele1.checkValidity());
+        
+     if (ele.checkValidity() && ele1.checkValidity()) {
+            document.getElementById("p1").innerText =
+                document.getElementById("usrnm").value;
+            document.getElementById("p2").innerText =
+                document.getElementById("pass").value;
+        } else {
+            document.getElementById("p1").innerText =
+                ele.validationMessage
+        }   
+    }
+//     function valid() {
+//     let usernameField = document.getElementById("usrnm");
+//     let passwordField = document.getElementById("pass");
+//     let outputParagraph = document.getElementById("p1");
+
+//     console.log("Username valid:", usernameField.checkValidity());
+//     console.log("Password valid:", passwordField.checkValidity());
+
+//     if (usernameField.checkValidity() && passwordField.checkValidity()) {
+//         outputParagraph.innerText = `Username: ${usernameField.value}, Password: ${passwordField.value}`;
+//     } else {
+//         if (!usernameField.checkValidity()) {
+//             outputParagraph.innerText = usernameField.validationMessage;
+//         } else if (!passwordField.checkValidity()) {
+//             outputParagraph.innerText = passwordField.validationMessage;
+//         }
+//     }
+// }
+</script>
+</html>

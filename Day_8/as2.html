@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Assignment 2</title>
+</head>
+
+<body>
+    Below is the Displayed Data from the file
+    <button type="button" onclick="showdata()">Details</button>
+    <p id="data"></p>
+    <label for="Enter id"></label>
+    <input type="number" id="no">
+</body>
+<script>
+    function showdata() {
+        let req = new XMLHttpRequest();
+        req.open("GET", "https://jsonplaceholder.typicode.com/posts");
+        req.send();
+        req.onload = function () {
+            let dataJSON = this.responseText;
+            let da = JSON.parse(dataJSON)
+            let num = document.getElementById("no")
+            // for(i=0; i<post_id.size;i++){
+            //     if(num==i){
+
+                    
+            //     }
+            // }
+
+
+            let tableHTML = "<table border='2'>";
+
+            tableHTML += "<tr><th>User ID</th><th>Post ID</th><th>Title</th><th>Body</th></tr>";
+
+
+            da.forEach(post => {
+                if(post.id==num){
+                tableHTML += "<tr>";
+                tableHTML += `<td>${post.userId} </td>`;
+                tableHTML += `<td>${post.id}</td>`;
+                tableHTML += `<td>${post.title}</td>`;
+                tableHTML += `<td>${post.body}</td>`;
+                tableHTML += "</tr>";
+                
+                }
+
+
+
+            });
+           
+            document.getElementById("data").innerHTML = tableHTML
+        }
+    }
+</script>
+
+</html>
