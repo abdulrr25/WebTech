@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Display the promise Feature</h1>
+    <p>Checking out the properties</p>
+    <p id="demo"></p>
+</body>
+<script>
+    function display(some){
+        document.getElementById("demo").innerHTML=some;
+    }
+    let myPromise=new Promise( function(resolve, reject){
+        let x=5;
+
+        if(x==0){
+            console.log("okkk");
+            
+        }
+        else{
+            console.log("error");
+            
+        }
+
+    });
+    myPromise.then(
+    function(value){console.log("in then")},
+    function(error){console.log("in then error");
+
+    })
+</script>
+</html>

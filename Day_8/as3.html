@@ -1,0 +1,136 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Assignment 2</title>
+</head>
+
+<body>
+    Below is the Displayed Data from the file
+    <button type="button" onclick="showdata()">Details</button>
+    <p id="data"></p>
+    <label for="Enter id"></label>
+    <input type="number" id="no">
+</body>
+<script>
+    function showdata() {
+        let req = new XMLHttpRequest();
+        req.open("GET", "https://jsonplaceholder.typicode.com/posts");
+        req.send();
+        req.onload = function () {
+            let dataJSON = this.responseText;
+            let da = JSON.parse(dataJSON)
+            let num = document.getElementById("no")
+            // for(i=0; i<post_id.size;i++){
+            //     if(num==i){
+
+                    
+            //     }
+            // }
+
+
+            let tableHTML = "<table border='2'>";
+
+            tableHTML += "<tr><th>User ID</th><th>Post ID</th><th>Title</th><th>Body</th></tr>";
+
+
+            da.forEach(post => {
+                if(post.id==num){
+                tableHTML += "<tr>";
+                tableHTML += `<td>${post.userId} </td>`;
+                tableHTML += `<td>${post.id}</td>`;
+                tableHTML += `<td>${post.title}</td>`;
+                tableHTML += `<td>${post.body}</td>`;
+                tableHTML += "</tr>";
+                
+                }
+
+
+
+            });
+           
+            document.getElementById("data").innerHTML = tableHTML
+        }
+    }
+</script>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 2</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Below is the Displayed Data from the file</p>
+    <label for="post-id-input">Enter Post ID:</label>
+    <input type="number" id="post-id-input">
+    <button type="button" onclick="showdata()">Details</button>
+    <div id="data"></div>
+    <script>
+        function showdata() {
+            let req = new XMLHttpRequest();
+            req.open("GET", "https://jsonplaceholder.typicode.com/posts");
+            req.send();
+            req.onload = function () {
+                if (this.status === 200) {
+                    let dataJSON = this.responseText;
+                    let da = JSON.parse(dataJSON);
+                    
+                    // Get the value from the input field and convert it to a number
+                    let num = document.getElementById("post-id-input").value;
+                    let postId = parseInt(num);
+
+                    // Find the single post that matches the entered ID
+                    let post = da.find(p => p.id === postId);
+
+                    let tableHTML = "";
+                    let displayElement = document.getElementById("data");
+
+                    if (post) {
+                        tableHTML = "<table border='1'>";
+                        tableHTML += "<tr><th>User ID</th><th>Post ID</th><th>Title</th><th>Body</th></tr>";
+                        tableHTML += "<tr>";
+                        tableHTML += `<td>${post.userId}</td>`;
+                        tableHTML += `<td>${post.id}</td>`;
+                        tableHTML += `<td>${post.title}</td>`;
+                        tableHTML += `<td>${post.body}</td>`;
+                        tableHTML += "</tr>";
+                        tableHTML += "</table>";
+                    } else {
+                        tableHTML = `<p>No post found with ID: ${num}</p>`;
+                    }
+                    
+                    displayElement.innerHTML = tableHTML;
+                } else {
+                    document.getElementById("data").innerHTML = "<p>Error fetching data.</p>";
+                }
+            };
+        }
+    </script>
+</body>
+</html>
