@@ -1,27 +1,26 @@
-function resolveLater(callback) {
+function resolveLater() {
+  return new Promise((resolve, reject) => {
     let a = 10;
-    const p = new Promise(res, rej);
 
-    if (a == 10) {
-        return res;
-    }
+    setTimeout(() => {
 
-    p.then(){
-
-    resolved display();
-
-        reject
-
-    }
-
+      if (a === 10) {
+        resolve("Success: 'a' is 10");
+      } else {
+        reject("Error: 'a' is not 10");
+      }
+    }, 1000);
+  });
 }
 
-
-
-
-
-function display() {
-    console.log("Hello World ");
+function display(message) {
+  console.log("Hello World: " + message);
 }
 
-resolveLater(display)
+resolveLater()
+  .then((message) => {
+    display(message);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
