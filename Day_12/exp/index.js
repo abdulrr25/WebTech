@@ -1,4 +1,4 @@
-const express=require('express');
+const express = require('express');
 const user1 = require('./Mock_DATA.json');
 const port = 2500;
 const app = express();
