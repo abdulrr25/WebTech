@@ -4,10 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Fc from './fc';
+import CaseConverter from './cls';
+// import Calculator from './cal';
+// import Fact from './fact';
+// import Fun1, {fun1, fun2} from './mul';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* <Fun1/>
+          <Fact num="5"/>
+    <Calculator num1="11" num2="9" op="2"/> */}
+
+    <CaseConverter/>
     <App />
     <Fc/>
   </React.StrictMode>
