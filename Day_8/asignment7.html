@@ -77,6 +77,7 @@
         let prevInput = '';    // Holds the previous input (for operations)
         let operator = '';     // Holds the current operator
 
+        // Clear display
         function clearDisplay() {
             currentInput = '';
             prevInput = '';
@@ -84,6 +85,7 @@
             $display.val('');
         }
 
+        // Perform calculation based on operator
         function calculate() {
             let result;
             const num1 = parseFloat(prevInput);
@@ -112,6 +114,7 @@
             operator = '';
         }
 
+        // Handle button clicks
         $('.btn').on('click', function () {
             const value = $(this).text();
 
