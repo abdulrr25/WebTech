@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title> P Tag</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#itl").mouseover(function(){
+                $(this).css("text-decoration", "underline");
+            });
+
+            $("#und").mouseover(function(){
+                $(this).css("font-weight", "bold");
+            });
+
+             $("#itl").mouseleave(function(){
+                $(this).css("text-decoration", "none");
+            });
+
+             $("#und").mouseleave(function(){
+                $(this).css("font-weight", "normal");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="itl">Hello</p>
+    <p id="und">Hello</p>
+</body>
+</html>

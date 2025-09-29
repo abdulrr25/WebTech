@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Sorting OF array of objects :
+    <h3 id="obj"></h3>
+</body>
+<script>
+    let ar =[{fname:"Rishabh",marks:45,rollno:2},{fname:"Mukund",marks:34,rollno:32},{fname:"Ansh",marks:23,rollno:34}]
+    ar.sort((s1,s2)=>{
+        if(s1.fname>s2.fname)
+    {
+        return 1;
+    }
+    if(s1.fname<s2.fname)
+    {
+        return -1;
+    }
+    else{
+        return 0;
+    }
+    })
+    document.getElementById("obj").innerHTML=JSON.stringify(ar,null,2);
+
+</script>
+</html>

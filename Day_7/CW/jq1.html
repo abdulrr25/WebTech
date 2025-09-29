@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>JQUERY</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").mouseover(function(){
+                $("p").css("background-color","Red")
+            })
+            $("button").mouseout(function(){
+                $("p").css("background-color","blue")
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <h1>
+        Hello Guys
+    </h1>
+    <p>Toh Kaise Hain aaplog</p>
+    <button>
+        To chaliye , Shuru Karte hai
+    </button>
+</body>
+</html>
