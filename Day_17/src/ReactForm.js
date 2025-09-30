@@ -21,6 +21,7 @@ function App1() {
         useState("");
     const [about, setAbout] = useState("");
 
+let emfrmt = '/^[a-zA-Z-_]+@[a-zA-z]+\.[a-zA-Z]{2,3}$/';
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(
@@ -35,7 +36,16 @@ function App1() {
             url,
             about
         );
-        // Add your form submission logic here
+        if(contact.length!==10 ){
+            alert("Contact Number should be 10 digit");
+        }
+        if (isNaN(contact)) {
+        alert("Contact Details must only contain numbers.");
+        }
+        if(email!==emfrmt){
+            alert("Email format is incorrect");
+        }
+        
     };
 
     const handleSubjectChange = (sub) => {
@@ -45,7 +55,6 @@ function App1() {
         }));
     };
     const handleReset = () => {
-        // Reset all state variables here
         setFirstName("");
         setLastName("");
         setEmail("");
