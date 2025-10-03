@@ -20,11 +20,12 @@ export default function PasswordGenerator(){
     setPassword(newPassword);
   };
 
-  useEffect(() => { generatePassword() },
+   useEffect(() => { generatePassword() },
     [length, includeNumbers, includeSymbols])
 
   useCallback(() => { generatePassword() },
     [length, includeNumbers, includeSymbols])
+
 
 
   const copyToClipboard = () => {
