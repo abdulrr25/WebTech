@@ -5,7 +5,7 @@ export default function Randm(){
     let [pass,setpass]=useState("")
     function generator(e){
 
-        let characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234679!@#$%&'
+        let characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234679!@#$%&';
         let lengh = 8;
         let as =""
         for(let i=0;i<lengh;i++)
