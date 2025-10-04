@@ -30,6 +30,7 @@ function App() {
       <img
         src="https://static.vecteezy.com/system/resources/previews/002/463/890/non_2x/ethereum-logo-color-crypto-currency-symbol-isolated-vector.jpg"
         alt="logo"
+        href="/"
         width="30px" // corrected spelling from 'widht'
         height="30px"
         style={{

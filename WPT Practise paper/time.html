@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        /* body {
+          margin: 0;
+          font-family: sans-serif;
+          background: #fff;
+          color: #333;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          font-size: 18px;
+        } */
+      </style>
+    </head>
+    <body>
+      <div id='datetime'></div>
+      <script>
+        function updateTime() {
+          const now = new Date();
+          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          const dateStr = now.toLocaleDateString(undefined, options);
+          const timeStr = now.toLocaleTimeString();
+          document.getElementById('datetime').textContent = dateStr + ' ' + timeStr;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+      </script>
+    </body>
+    </html>
