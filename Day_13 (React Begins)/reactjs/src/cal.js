@@ -1,5 +1,4 @@
 export default function Calculator(props){
-
     let n1 = parseFloat(props.num1)
     let n2 = parseFloat(props.num2)
     let n3= parseFloat(props.op)
@@ -20,9 +19,7 @@ export default function Calculator(props){
     
         default:
             break;
-    }
-
-    
+    }  
     return(
     <>
         <h1>Calculator</h1>

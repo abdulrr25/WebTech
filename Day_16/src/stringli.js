@@ -1,20 +1,35 @@
-import { useState } from "react"
+import { useState } from "react";
 
-export default function Stringli(){
-    let[n1 ,setn1]=useState("")
-    
-    return(
-        <>
-        n1=<input type="text" onblur={(e)=>{
-            setn1(e.target.value)
-           
-        }
-        
-    }/>
-    <button onclick="Submit()"></button>
-    <h1> Name {n1}</h1>
+export default function Stringli() {
+  const [currentName, setCurrentName] = useState("");
+  const [nameList, setNameList] = useState([]);
+
+  const handleBlur = (e) => {
+    setCurrentName(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    setNameList([...nameList, currentName]); // Add to list
+    setCurrentName(""); // Clear input if needed
+  };
+
+  return (
+    <>
+      <label>
+        Name:{" "}
+        <input type="text" value={currentName} onChange={handleBlur} />
+      </label>
+      <button onClick={handleSubmit}>Submit</button>
+
+      <div>
+        <p>Current Name: {currentName}</p>
+      </div>
+
+      <ul>
+        {nameList.map((name, index) => (
+          <li key={index}>Name {index + 1}: {name}</li>
+        ))}
+      </ul>
     </>
-
-
-    )
+  );
 }

@@ -16,7 +16,7 @@ export default function DemoAxios() {
         setError(err.message);
         setPosts([]);
       })
-      
+
   }, []); 
 
   

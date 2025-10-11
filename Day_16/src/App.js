@@ -5,7 +5,7 @@ import './App.css';
 // import CaseConverter from './cls';
 // import CaseConverter from './cls';
 // import FromViewToCompClass1 from './new';
-import Counttable from './countable';
+// import Counttable from './countable';
 // import Counter from './counter';
 import Stringli from './stringli';
 function App() {
@@ -19,7 +19,7 @@ function App() {
     {/* <CaseConverter/> */}
     
     {/* <Counter/> */}
-    <Counttable/>
+    {/* <Counttable/> */}
     <Stringli/>
     </div>
   );

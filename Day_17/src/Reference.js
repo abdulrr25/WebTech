@@ -12,8 +12,7 @@ export default function Ref(){
     return(
         <>
             <div>
-                <input type="text" onChange={((e)=>{
-                    b.current++;
+                <input type="text" onChange={((e)=>{ b.current++;
                     
                     sets1(e.target.value)
                 })}>
