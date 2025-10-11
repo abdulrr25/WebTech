@@ -1,25 +1,33 @@
-Create 3 Components
+Component Requirements
+Create the following components:
 
-Home.js     Function Component  -- Message Home Page
-AboutUs.js  Function Component  -- Message About Us 
-ContactUs.js  Class Component  -- add Contact Details 
-Counter.js
+Home.js – Functional component that displays the message: "Home Page"
 
+AboutUs.js – Functional component that displays the message: "About Us"
 
-With Route Concepts 
-Display Above Componenets as per Click 
-Default Home Page need to Display 
+ContactUs.js – Class component that displays contact details
 
-take 1 more Route - Counter 
+Counter.js – Functional component with a counter feature
 
-on Click on That call Counter.js 
+ Routing Setup
+Use React Router to set up navigation between the components.
 
-In that Counter -Take 2 Buttons 
-Increament and Decreament 
-and Perform Oprations with help of UseState Hook 
+Display the appropriate component based on the selected route.
 
+The Home Page should be the default route.
 
+Add an additional route for Counter.js.
 
+ Counter Component Functionality
+In Counter.js:
+
+Use the useState hook to manage the counter state.
+
+Include two buttons:
+
+Increment – increases the counter value
+
+Decrement – decreases the counter value
 
 
 

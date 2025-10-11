@@ -11,32 +11,21 @@ function App() {
     <div className="App">
 <div >
 
-     <nav>
-  <ul >
-    <li>
-      <img
-        src="https://static.vecteezy.com/system/resources/previews/002/463/890/non_2x/ethereum-logo-color-crypto-currency-symbol-isolated-vector.jpg"
-        alt="logo"
-        href="/"
-        width="30px" // corrected spelling from 'widht'
-        height="30px"
-      
-      />
-    </li>
-    <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/about">About Us</Link>
-    </li>
-    <li>
-      <Link to="/contact">Contact Us</Link>
-    </li>
-    <li>
-      <Link to="/login">Login</Link>
-    </li>
-  </ul>
-</nav>
+    <header className="navbar">
+  <Link to="/" className="logo-link">
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/002/463/890/non_2x/ethereum-logo-color-crypto-currency-symbol-isolated-vector.jpg"
+      alt="logo"
+      className="logo"
+    />
+  </Link>
+  <nav className="nav-links">
+    <Link to="/">Home</Link>
+    <Link to="/about">About Us</Link>
+    <Link to="/contact">Contact Us</Link>
+    <Link to="/login">Login</Link>
+  </nav>
+</header>
 
       </div>
      <div style={{ display: "flex", justifyContent: "center", padding: "20px" }}

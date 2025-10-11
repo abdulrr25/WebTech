@@ -3,12 +3,13 @@ import { Component } from "react";
 export default class Calculator extends Component {
     constructor(props) {
         super(props);
+
                 this.calc = this.calc.bind(this);
                 this.handleChange = this.handleChange.bind(this);
 
         this.state = {
             res: 0,
-            n1: 0,
+            n1: this.props.n1,
             n2: 0,
             n3: 0
         };
@@ -51,7 +52,7 @@ this.setState({ res: result });
                     Enter Number 1<input
                         type="number"
                         id="txt"
-                        // onBlur={(e)=>{this.state.n1(e.target.value)}}
+                        a
                         onChange={this.handleChange}
                         name="n1"
                         value={this.state.n1}
@@ -62,7 +63,6 @@ this.setState({ res: result });
                     <input
                         type="number"
                         id="txt"
-                        // onBlur={(e)=>{this.state.n2(e.target.value)}}
                         onChange={this.handleChange}
                         name="n2"
 
@@ -79,7 +79,6 @@ this.setState({ res: result });
                     <input
                         type="Number"
                         id="txt"
-                        // onBlur={(e)=>{this.state.n3(e.target.value)}}
                         onChange={this.handleChange}
                         name="n3"
 

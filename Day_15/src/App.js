@@ -1,7 +1,7 @@
 import './App.css';
+import Calculator from './cal';
 // import LifecycleDemo from './ClassComponentLifeCycle';
 // import UserDetailsForm from './usrDtl';
-// import Calculator from './cal';
 // import CaseConverter from './cls';
 // import CaseConverter from './cls';
 // import FromViewToCompClass1 from './new';
@@ -14,10 +14,9 @@ function App() {
       {/* <UserDetailsForm/> */}
       {/* <LifecycleDemo number="5"/> */}
       {/* <CaseConverter/> */}
-      {/* <Calculator/> */}
     {/* <CaseConverter/> */}
-    
-    {/* <Counter/> */}
+<Calculator n1="5" />   
+ {/* <Counter/> */}
     <Counttable/>
     </div>
   );
