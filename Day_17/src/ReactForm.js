@@ -4,7 +4,7 @@
 import "./App.css";
 import { React, useState } from "react";
 
-function App1() {
+export default function App1() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -228,4 +228,3 @@ let emfrmt = '/^[a-zA-Z-_]+@[a-zA-z]+\.[a-zA-Z]{2,3}$/';
     );
 }
 
-export default App1;

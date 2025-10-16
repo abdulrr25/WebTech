@@ -1,6 +1,5 @@
 import { useState } from "react";
 export default function Counter(){
-    // let data='';
     let [count, setcount]=useState(0);
 
     function handler(){

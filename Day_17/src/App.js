@@ -1,5 +1,5 @@
-import App1 from './ReactForm';
 import './App.css';
+import App1 from './ReactForm';
 // import DemoAxios from './DemoAxios';
 // import Randm from './Random';
 // import Ref from './Reference';
@@ -8,8 +8,9 @@ function App() {
     <div className="App">
       {/* <Randm/>
      <Ref/> */}
-      <App1/>
       {/* <DemoAxios/> */}
+
+<App1></App1>
     </div>
   );
 }

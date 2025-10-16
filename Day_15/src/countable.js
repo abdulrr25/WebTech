@@ -6,10 +6,13 @@ export default function Counttable(){
     
     useEffect(() => {
         console.log("In useeffect");
-    }, [count]);
+    }, []);
 
     function handler(){ 
         setCount(count + 1); 
+    }
+    function handler1(){ 
+        setCount(count - 1); 
     }
     
     return(
@@ -28,6 +31,7 @@ export default function Counttable(){
             </table>
             
             <button onClick={handler}>Click to Increment</button>
+            <button onClick={handler1}>Click to Decerement</button>
         </>
     )
 }
