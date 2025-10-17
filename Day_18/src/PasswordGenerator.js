@@ -26,8 +26,6 @@ export default function PasswordGenerator(){
   useCallback(() => { generatePassword() },
     [length, includeNumbers, includeSymbols])
 
-
-
   const copyToClipboard = () => {
     navigator.clipboard.writeText(password);
     alert('Password copied to clipboard!');

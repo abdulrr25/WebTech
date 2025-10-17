@@ -1,13 +1,9 @@
 function calculate(...a) {
     let sum = 0;
     a.forEach(x =>{
-
-        
-        sum = sum + x;
-        
+        sum = sum + x;     
         if (x % 2 != 0) {
             console.log(x);
-            
         } 
 
     } 

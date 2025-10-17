@@ -1,0 +1,43 @@
+1)pwd : path of current directory 
+
+2)ls : list out the created directory 
+
+3)mkdir directoryname : create new file name
+
+4)rmdir_directoryname : remove the directory
+
+5)whoami : who is the current user
+
+6)cd directoryname:move inside the directory
+
+7)date : give the current date and time
+
+8)date +%D : gives only the date
+
+9)date +%T : gives only the current time 
+
+10)date +%H:%M : gives only the hours and minutes 
+
+11) ls - List out the files in a linear way
+
+11.a)ls -lt : details about the created directories
+
+12)ls -ltr : details in reverse order
+
+13)touch filename : create a new file
+
+14)nano filename : opens the file in nano editor
+
+15)cat filename : display the data of the file 
+
+16)mv filename directoryname : Move the file to the respective directory
+
+17)drwxr-xr-x : The details tells about the permissions for the respected files .it is in the form of RWX,RWX,RWX ,for respective identities , ie, 3 per different identities U.G.O(user,group,others).
+0-Nothing
+1-Execute
+2-Write
+3-W+E
+4-Read
+5-R+E
+6-W+R
+7-RWX

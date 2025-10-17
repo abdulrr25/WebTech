@@ -2,14 +2,14 @@
 // import DemoCallBack from './DemoWithoutCallback (1)';
 
 import './App.css';
-// import PasswordGenerator from './PasswordGenerator';
-import Counter from './Counter';
+import PasswordGenerator from './PasswordGenerator';
+// import Counter from './Counter';
 
 function App() {
   return (
     <div className="App">
-      <Counter/>
-      {/* <DemoWithCallBack/> */}
+      {/* <Counter/>
+      <DemoWithCallBack/> */}
       {/* <DemoCallBack/> */}
       {/* <PasswordGenerator/> */}
       

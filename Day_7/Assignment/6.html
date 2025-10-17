@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
+    <title>jQuery Example</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#btn").click(function(){
-                $("$p1").fadeIn(1000)
-
-            })
-        })
-    </script>
 </head>
 <body>
-    <p id="p1" style="background-color: chocolate;">
-        Hello
+
+    <button class="btn">Start Fade-In</button>
+
+    <p id="p1" style="display:none;">
+        I will fade into view when the button is clicked!
     </p>
-    <button id="btn">Click me</button>
-    
+
+    <script>
+        $(document).ready(function() {
+            $(".btn").click(function(){
+                $("#p1").fadeIn(1000); 
+            });
+        });
+    </script>
+
 </body>
 </html>
